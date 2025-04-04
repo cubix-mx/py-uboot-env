@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "py-uboot-env"
+version = "0.1.0"
+authors = [
+  { name="Edel Macias", email="author@example.com" },
+]
+description = "A package for reading, modifying, and writing U-Boot environment files"
+readme = "README.md"
+requires-python = ">=3.6"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+
+license = "Unlicense"
+
+[project.urls]
+"Homepage" = "https://github.com/cubix-mx/py-uboot-env"
+"Bug Tracker" = "https://github.com/cubix-mx/py-uboot-env/issues"
+
+[project.scripts]
+uboot-env = "py_uboot_env.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
