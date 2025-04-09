@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - '**'  # match all branches
+    tags:
+      - '**'    # also trigger on version tag pushes
 
 jobs:
   build:
