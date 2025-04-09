@@ -154,6 +154,19 @@ The test suite covers:
 - **CLI Commands**: Tests for all environment manipulation commands (`dump`, `get`, `set`, `delete`, `edit`).
 - **Integration Tests**: End-to-end workflows for both API and CLI usage patterns.
 
+### Publishing to PyPI
+
+This package uses GitHub Actions to automatically publish to PyPI when a new release is created. To publish a new version:
+
+1. Update the version number in `pyproject.toml`
+2. Merge your changes to the `main` branch
+3. Create a new [GitHub Release](https://github.com/cubix-mx/py-uboot-env/releases/new) with a tag that matches the version (e.g., `v1.1.3`)
+
+**Important Notes:**
+- The version in `pyproject.toml` MUST be updated before creating a release tag, or PyPI will reject the publication.
+- The GitHub Action workflow will only publish to PyPI when a tag is pushed, not on regular commits.
+- The version tag should match the version in `pyproject.toml`.
+
 ### Contributing
 
 1. Fork the repository
