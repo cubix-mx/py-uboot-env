@@ -2,14 +2,17 @@ name: Publish Python 🐍 distribution 📦 to PyPI and TestPyPI
 
 on:
   push:
-    branches:
-      - '**'  # match all branches
     tags:
       - '**'    # also trigger on version tag pushes
 
 jobs:
+  test:
+    name: Run tests
+    uses: ./.github/workflows/run-tests.yml
+
   build:
     name: Build distribution 📦
+    needs: [test]  # Only build if tests pass
     runs-on: ubuntu-latest
 
     steps:

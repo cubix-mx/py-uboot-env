@@ -125,9 +125,9 @@ The package handles U-Boot environment files in their standard binary format, in
 
 The package includes a comprehensive test suite to ensure functionality and reliability.
 
-#### Running Tests
+#### Running Tests Locally
 
-To run the test suite, first install pytest:
+To run the test suite locally, first install pytest:
 
 ```bash
 pip install pytest
@@ -144,6 +144,15 @@ For more detailed output, use the verbose flag:
 ```bash
 python -m pytest -v
 ```
+
+#### Continuous Integration
+
+This project uses GitHub Actions for continuous integration testing:
+
+- Tests automatically run on every push and pull request
+- Tests run on multiple operating systems (Linux, Windows, macOS)
+- Tests run across multiple Python versions (3.8, 3.9, 3.10, 3.11)
+- Every release requires all tests to pass before publication to PyPI
 
 #### Test Coverage
 
