@@ -13,10 +13,12 @@ readme = "README.md"
 requires-python = ">=3.6"
 classifiers = [
     "Programming Language :: Python :: 3",
+    "License :: Public Domain",
     "Operating System :: OS Independent",
 ]
 
-license = "Unlicense"
+# This format ensures SPDX compatibility for newer Python while keeping the license file reference
+license = { text = "Unlicense" }
 
 [project.urls]
 "Homepage" = "https://github.com/cubix-mx/py-uboot-env"
@@ -27,6 +29,7 @@ uboot-env = "py_uboot_env.cli:main"
 
 [tool.setuptools]
 package-dir = {"" = "src"}
+license-files = ["LICENSE"]
 
 [tool.setuptools.packages.find]
 where = ["src"]
