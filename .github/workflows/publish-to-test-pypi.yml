@@ -4,8 +4,6 @@ on:
   push:
     branches:
       - '**'  # match all branches
-  tags:
-    - 'v*'    # also trigger on version tag pushes like v1.2.3
 
 jobs:
   build:
@@ -37,7 +35,7 @@ jobs:
   publish-to-pypi:
     name: >-
       Publish Python 🐍 distribution 📦 to PyPI
-    if: startsWith(github.ref, 'refs/tags/v')  # only publish to PyPI on tag pushes like v1.2.3
+    if: startsWith(github.ref, 'refs/tags/')  # only publish to PyPI on tag pushes
     needs:
     - build
     runs-on: ubuntu-latest
@@ -60,7 +58,7 @@ jobs:
     name: >-
       Sign the Python 🐍 distribution 📦 with Sigstore
       and upload them to GitHub Release
-    if: startsWith(github.ref, 'refs/tags/v')  # Only tag names like v1.2.3
+    if: startsWith(github.ref, 'refs/tags/')  # Only tag names
     needs:
     - publish-to-pypi
     runs-on: ubuntu-latest
