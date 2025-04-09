@@ -121,6 +121,39 @@ The package handles U-Boot environment files in their standard binary format, in
 
 ## Development
 
+### Testing
+
+The package includes a comprehensive test suite to ensure functionality and reliability.
+
+#### Running Tests
+
+To run the test suite, first install pytest:
+
+```bash
+pip install pytest
+```
+
+Then run the tests:
+
+```bash
+python -m pytest
+```
+
+For more detailed output, use the verbose flag:
+
+```bash
+python -m pytest -v
+```
+
+#### Test Coverage
+
+The test suite covers:
+
+- **Core Functionality**: Tests for the `UBootEnv` class methods (`get`, `set`, `delete`, `save`) and utility functions (`load_env`, `dump_env`, `format_env`).
+- **Error Handling**: Tests for handling invalid environment sizes and CRC errors.
+- **CLI Commands**: Tests for all environment manipulation commands (`dump`, `get`, `set`, `delete`, `edit`).
+- **Integration Tests**: End-to-end workflows for both API and CLI usage patterns.
+
 ### Contributing
 
 1. Fork the repository
